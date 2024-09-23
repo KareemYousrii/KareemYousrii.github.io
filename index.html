@@ -52,10 +52,10 @@
       <!-- /.col-lg-8 -->
       <div class="col-lg-8">
         <p class="m-0">
-        I am a Ph.D. candidate in the Computer Science department at the
-        University of California, Los Angeles (UCLA), where i'm co-advised by
-        <span style="color:#4169E1"><a href="https://web.archive.org/web/20240430001039/http://web.cs.ucla.edu/~guyvdb/">
-        Guy Van den Broeck</a></span> and <span style="color:#4169E1"><a href="https://web.archive.org/web/20240430001039/http://web.cs.ucla.edu/~kwchang/"> Kai-Wei Chang</a></span>.
+	I am a Postdoctoral Fellow in the Computer Science Department at University of California, Irvine hosted by <span style="color:#4169E1"><a href="https://sameersingh.org/">Sameer Singh</a></span>.
+        I obtained my Ph.D. in Computer Science at the University of California, Los Angeles (UCLA), where I was fortunate to be co-advised by
+        <span style="color:#4169E1"><a href="http://web.cs.ucla.edu/~guyvdb/">
+        Guy Van den Broeck</a></span> and <span style="color:#4169E1"><a href="http://web.cs.ucla.edu/~kwchang/"> Kai-Wei Chang</a></span>.
         </p><p></p>
         <!--p>
         I'm broadly interested in Neuro-Symbolic AI. In particular, i'm interested
@@ -75,13 +75,10 @@
         <p>Research Interests:<ul><li>Neuro-Symbolic AI</li> <li>Trustworthy AI</li><li>Tractable Probabilistic Modeling</li><li>Knowledge Representation and Reasoning</li></ul>
         <p>
         Links:
-        [<a href="https://web.archive.org/web/20240430001039/https://scholar.google.com/citations?user=hkM0hbIAAAAJ">Google Scholar</a>]
-        [<a href="https://web.archive.org/web/20240430001039/https://github.com/KareemYousrii/">Github</a>]
-        [<a href="https://web.archive.org/web/20240430001039/https://twitter.com/KareemYousrii">Twitter</a>]
+        [<a href="https://scholar.google.com/citations?user=hkM0hbIAAAAJ">Google Scholar</a>]
+        [<a href="https://github.com/KareemYousrii/">Github</a>]
+        [<a href="https://twitter.com/KareemYousrii">Twitter</a>]
         </p>
-        <strong><span style="color:red">
-          I am on the 2023-2024 academic job market! Please reach out if you have any openings!
-        </span></strong>
       </div>
       <div class="col-lg-4">
         <img class="img-fluid rounded img-responsive" style="width:60%" src="files/profile-pic.jpg" alt="">
@@ -93,12 +90,51 @@
     <div class="my-4 text-left">
       <h2>Publications</h2>
       <ul>
-          <li><b><a href="https://web.archive.org/web/20240430001039/https://openreview.net/forum?id=Tj6Wcx7gVk">Probabilistically Rewired Message-Passing Neural Networks</a></b>
+          <li><b><a href="https://arxiv.org/abs/2408.08541">Where is the signal in tokenization space?</a></b>
+          <p class="content"> Renato Lui Geh, Honghua Zhang, <strong>Kareem Ahmed</strong>, Benjie Wang, Guy Van den Broeck</p>
+          <!-- <br> -->
+            <em>EMNLP 2024</em>.
+          <br>
+          [<a href="http://web.cs.ucla.edu/~ahmedk/" onclick="$('#tokenization-abstract').toggle();return false;">abstract</a>]
+          <div id="tokenization-abstract" class="abstract" style="display:none;">
+              <p>
+		Large Language Models (LLMs) are typically shipped with tokenizers that deterministically encode text into so-called canonical token sequences, to which the LLMs assign probability values.
+		One common assumption is that the probability of a piece of text is the probability of its canonical token sequence. 
+		However, the tokenization of a string is not unique: e.g., the Llama2 tokenizer encodes Tokens as [Tok,ens], but [Tok,en,s] also represents the same text.
+		In this paper, we study non-canonical tokenizations.
+		We prove that, given a string, it is computationally hard to find the most likely tokenization for an autoregressive LLM, as well as to compute the marginal probability over all possible tokenizations.
+		We then show how the marginal is, in most cases, indistinguishable from the canonical probability.
+		Surprisingly, we then empirically demonstrate the existence of a significant amount of signal hidden within tokenization space. 
+		Notably, by simply aggregating the probabilities of non-canonical tokenizations, we achieve improvements across a range of LLM evaluation benchmarks for a variety of architectures, including transformers and state space models.
+              </p>
+          </div>
+          <p></p>
+        </li>
+          <li><b><a href="https://arxiv.org/abs/2406.00766">Scaling Tractable Probabilistic Circuits: A Systems Perspective</a></b>
+          <p class="content"> Anji Liu, <strong>Kareem Ahmed</strong>, Guy Van den Broeck</p>
+          <!-- <br> -->
+            <em>ICML 2024</em>.
+          <br>
+          [<a href="http://web.cs.ucla.edu/~ahmedk/" onclick="$('#pyjuice-abstract').toggle();return false;">abstract</a>]
+          <div id="pyjuice-abstract" class="abstract" style="display:none;">
+              <p>
+		Probabilistic Circuits (PCs) are a general framework for tractable deep generative models, which support exact and efficient probabilistic inference on their learned distributions.
+		Recent modeling and training advancements have enabled their application to complex real-world tasks. However, the time and memory inefficiency of existing PC implementations hinders further scaling up.
+		This paper proposes PyJuice, a general GPU implementation design for PCs that improves prior art in several regards. Specifically, PyJuice is 1-2 orders of magnitude faster than existing systems (including very recent ones) at training large-scale PCs.
+		Moreover, PyJuice consumes 2-5x less GPU memory, which enables us to train larger models.
+		At the core of our system is a compilation process that converts a PC into a compact representation amenable to efficient block-based parallelization, which significantly reduces IO and makes it possible to leverage Tensor Cores available in modern GPUs.
+		Empirically, PyJuice can be used to improve state-of-the-art PCs trained on image (e.g., ImageNet32) and language (e.g., WikiText, CommonGen) datasets.
+		 We further establish a new set of baselines on natural image and language datasets by benchmarking existing PC structures but with much larger sizes and more training epochs, with the hope of incentivizing future research.
+              </p>
+          </div>
+          <p></p>
+        </li>
+          <li><b><a href="https://openreview.net/forum?id=Tj6Wcx7gVk">Probabilistically Rewired Message-Passing Neural Networks</a></b>
           <p class="content"> Chendi Qian*, Andrei Manolache*, <strong>Kareem Ahmed</strong>, Zhe Zeng, Guy Van den Broeck, Mathias Niepert*, Christopher Morris*</p>
           <!-- <br> -->
             <em>ICLR 2024</em>.
           <br>
-          [<a href="https://web.archive.org/web/20240430001039/http://web.cs.ucla.edu/~ahmedk/" onclick="$('#pr-mpnns-abstract').toggle();return false;">abstract</a>]
+          [<a href="http://web.cs.ucla.edu/~ahmedk/" onclick="$('#pr-mpnns-abstract').toggle();return false;">abstract</a>]
           <div id="pr-mpnns-abstract" class="abstract" style="display:none;">
               <p>
                 Message-passing graph neural networks (MPNNs) emerged as powerful tools for
@@ -121,12 +157,12 @@
           <p></p>
         </li>
 
-          <li><b><a href="https://web.archive.org/web/20240430001039/https://openreview.net/pdf?id=hVAla2O73O">A Pseudo-Semantic Loss for Deep Generative Models with Logical Constraints</a></b>
+          <li><b><a href="https://openreview.net/pdf?id=hVAla2O73O">A Pseudo-Semantic Loss for Deep Generative Models with Logical Constraints</a></b>
           <p class="content"> <strong>Kareem Ahmed</strong>, Kai-Wei Chang, Guy Van den Broeck </p>
           <!-- <br> -->
             <em>NeurIPS 2023</em>.
           <br>
-          [<a href="https://web.archive.org/web/20240430001039/http://web.cs.ucla.edu/~ahmedk/" onclick="$('#pseudo-sl-abstract').toggle();return false;">abstract</a>]
+          [<a href="http://web.cs.ucla.edu/~ahmedk/" onclick="$('#pseudo-sl-abstract').toggle();return false;">abstract</a>]
           <div id="pseudo-sl-abstract" class="abstract" style="display:none;">
               <p>
                 Neuro-symbolic approaches bridge the gap between purely symbolic and neural approaches to learning.
@@ -150,12 +186,12 @@
         </li>
 
 
-        <li><b><a href="https://web.archive.org/web/20240430001039/https://arxiv.org/abs/2311.13718">A Unified Approach to Count-Based Weakly-Supervised Learning</a></b>
+        <li><b><a href="https://arxiv.org/abs/2311.13718">A Unified Approach to Count-Based Weakly-Supervised Learning</a></b>
           <p class="content"> Vinay Shukla, Zhe Zeng*, <strong>Kareem Ahmed*</strong>, Guy Van den Broeck </p>
             <!-- <br> -->
             <em>NeurIPS 2023</em>.
           <br>
-          [<a href="https://web.archive.org/web/20240430001039/http://web.cs.ucla.edu/~ahmedk/" onclick="$('#count-based_abstract').toggle();return false;">abstract</a>]
+          [<a href="http://web.cs.ucla.edu/~ahmedk/" onclick="$('#count-based_abstract').toggle();return false;">abstract</a>]
           <div id="count-based_abstract" class="abstract" style="display:none;">
               <p>
                 We observe that in weakly supervised learning for binary classification, the weak supervision can be seen as a constraint on label counts.
@@ -173,14 +209,14 @@
           <p></p>
         </li>
 
-        <li><b><a href="https://web.archive.org/web/20240430001039/https://arxiv.org/abs/2210.01941">SIMPLE: A Gradient Estimator for k-Subset Sampling</a></b>
+        <li><b><a href="https://arxiv.org/abs/2210.01941">SIMPLE: A Gradient Estimator for k-Subset Sampling</a></b>
           <p class="content"> <strong>Kareem Ahmed*</strong>, Zhe Zeng*, Mathias Niepert, Guy Van den Broeck</p>
             <em>ICLR 2023</em>.
             <!-- <strong><span style="color:red">
               Oral Presentation.
             </span></strong> -->
             <br>
-            [<a href="https://web.archive.org/web/20240430001039/http://web.cs.ucla.edu/~ahmedk/" onclick="$('#SIMPLE_abstract').toggle();return false;">abstract</a>]
+            [<a href="http://web.cs.ucla.edu/~ahmedk/" onclick="$('#SIMPLE_abstract').toggle();return false;">abstract</a>]
             <div id="SIMPLE_abstract" class="abstract" style="display:none;">
                 <p>
                   k-subset sampling is ubiquitous in machine learning, enabling regularization and interpretability through sparsity. The challenge lies
@@ -195,14 +231,14 @@
           <p></p>
         </li>
 
-        <li><b><a href="https://web.archive.org/web/20240430001039/https://arxiv.org/abs/2302.14207">Semantic Strengthening of Neuro-Symbolic Learning</a></b>
+        <li><b><a href="https://arxiv.org/abs/2302.14207">Semantic Strengthening of Neuro-Symbolic Learning</a></b>
           <p class="content"> <strong>Kareem Ahmed</strong>, Kai-Wei Chang, Guy Van den Broeck</p>
             <em>AISTATS 2023</em>.
             <!-- <strong><span style="color:red">
               Oral Presentation.
             </span></strong> -->
             <br>
-            [<a href="https://web.archive.org/web/20240430001039/http://web.cs.ucla.edu/~ahmedk/" onclick="$('#Semantic-Strengthening_abstract').toggle();return false;">abstract</a>]
+            [<a href="http://web.cs.ucla.edu/~ahmedk/" onclick="$('#Semantic-Strengthening_abstract').toggle();return false;">abstract</a>]
             <div id="Semantic-Strengthening_abstract" class="abstract" style="display:none;">
                 <p>
                   Numerous neuro-symbolic approaches have recently been proposed typically with the goal of adding symbolic knowledge to the output layer
@@ -220,14 +256,14 @@
           <p></p>
         </li>
 
-        <li><b><a href="https://web.archive.org/web/20240430001039/https://arxiv.org/abs/2206.00426">Semantic Probabilistic Layers for Neuro-Symbolic Learning</a></b>
+        <li><b><a href="https://arxiv.org/abs/2206.00426">Semantic Probabilistic Layers for Neuro-Symbolic Learning</a></b>
           <p class="content"> <strong>Kareem Ahmed</strong>, Stefano Teso, Kai-Wei Chang, Guy Van den Broeck, Antonio Vergari</p>
             <em>NeurIPS 2022</em>.
             <!-- <strong><span style="color:red">
               Oral Presentation.
             </span></strong> -->
             <br>
-            [<a href="https://web.archive.org/web/20240430001039/http://web.cs.ucla.edu/~ahmedk/" onclick="$('#SPL_abstract').toggle();return false;">abstract</a>]
+            [<a href="http://web.cs.ucla.edu/~ahmedk/" onclick="$('#SPL_abstract').toggle();return false;">abstract</a>]
             <div id="SPL_abstract" class="abstract" style="display:none;">
                 <p>
                   We design a predictive layer for structured-output prediction (SOP) that can be plugged into any neural network guaranteeing
@@ -243,14 +279,14 @@
           <p></p>
         </li>
 
-        <li><b><a href="https://web.archive.org/web/20240430001039/https://arxiv.org/abs/2201.11250">Neuro-Symbolic Entropy Regularization</a></b>
+        <li><b><a href="https://arxiv.org/abs/2201.11250">Neuro-Symbolic Entropy Regularization</a></b>
           <p class="content"> <strong>Kareem Ahmed</strong>, Eric Wang, Kai-Wei Chang, Guy Van den Broeck</p>
             <em>UAI 2022</em>.
             <strong><span style="color:red">
               Oral Presentation.
             </span></strong>
             <br>
-            [<a href="https://web.archive.org/web/20240430001039/http://web.cs.ucla.edu/~ahmedk/" onclick="$('#NeSy-Entropy_abstract').toggle();return false;">abstract</a>]
+            [<a href="http://web.cs.ucla.edu/~ahmedk/" onclick="$('#NeSy-Entropy_abstract').toggle();return false;">abstract</a>]
             <div id="NeSy-Entropy_abstract" class="abstract" style="display:none;">
                 <p>
                   In structured prediction, the goal is to jointly predict many output variables that together encode a structured object&#8212;
@@ -270,12 +306,12 @@
           <p></p>
         </li>
 
-        <li><b><a href="https://web.archive.org/web/20240430001039/https://proceedings.mlr.press/v176/ahmed22a/ahmed22a.pdf">PYLON: A PyTorch Framework for Learning with Constraints</a></b>
+        <li><b><a href="https://proceedings.mlr.press/v176/ahmed22a/ahmed22a.pdf">PYLON: A PyTorch Framework for Learning with Constraints</a></b>
           <p class="content"> <strong>Kareem Ahmed</strong>,  Tao Li, Thy Ton, Quan Guo, Kai-Wei Chang, Parisa Kordjamshidi, Vivek Srikumar, Guy Van den Broeck, Sameer Singh
             <br>
-            <em><a href="https://web.archive.org/web/20240430001039/http://starai.cs.ucla.edu/papers/AhmedAAAI22.pdf">AAAI 2021</a>, <a href="https://web.archive.org/web/20240430001039/https://proceedings.mlr.press/v176/ahmed22a/ahmed22a.pdf">NeurIPS 2021</a></em>
+            <em><a href="http://starai.cs.ucla.edu/papers/AhmedAAAI22.pdf">AAAI 2021</a>, <a href="https://proceedings.mlr.press/v176/ahmed22a/ahmed22a.pdf">NeurIPS 2021</a></em>
           <br>
-            [<a href="https://web.archive.org/web/20240430001039/http://web.cs.ucla.edu/~ahmedk/" onclick="$('#Pylon_abstract').toggle();return false;">abstract</a>]
+            [<a href="http://web.cs.ucla.edu/~ahmedk/" onclick="$('#Pylon_abstract').toggle();return false;">abstract</a>]
             </p><div id="Pylon_abstract" class="abstract" style="display:none;">
                 <p>
                   Deep learning excels at learning low-level task information from large amounts of data, but struggles with learning high-level domain knowledge, 
@@ -292,14 +328,14 @@
            <p></p>
         </li>
 
-        <li><b><a href="https://web.archive.org/web/20240430001039/https://arxiv.org/abs/2103.11062">Leveraging Unlabeled Data for Entity-Relation Extraction through Probabilistic Constraint Satisfaction</a></b>
+        <li><b><a href="https://arxiv.org/abs/2103.11062">Leveraging Unlabeled Data for Entity-Relation Extraction through Probabilistic Constraint Satisfaction</a></b>
           <p class="content"> <strong>Kareem Ahmed</strong>, Eric Wang, Kai-Wei Chang, Guy Van den Broeck</p>
             <em>arxiv pre-print 2021</em>.
             <!-- <strong><span style="color:red">
               Oral Presentation.
             </span></strong> -->
             <br>
-            [<a href="https://web.archive.org/web/20240430001039/http://web.cs.ucla.edu/~ahmedk/" onclick="$('#NeSy-Entropy_abstract').toggle();return false;">abstract</a>]
+            [<a href="http://web.cs.ucla.edu/~ahmedk/" onclick="$('#NeSy-Entropy_abstract').toggle();return false;">abstract</a>]
             <div id="NeSy-Entropy_abstract" class="abstract" style="display:none;">
                 <p>
                   We study the problem of entity-relation extraction in the presence of symbolic domain knowledge. Such knowledge takes the 
